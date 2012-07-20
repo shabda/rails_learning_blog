@@ -2,7 +2,7 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all
+    @blogs = Blog.find(:all, :conditions => {:post_type=>true})
 
     respond_to do |format|
       format.html # index.html.erb
@@ -41,7 +41,7 @@ class BlogsController < ApplicationController
   # POST /blogs.json
   def create
     @blog = Blog.new(params[:blog])
-
+    @blog.post_type = true
     respond_to do |format|
       if @blog.save
         format.html { redirect_to @blog, notice: 'Blog was successfully created.' }

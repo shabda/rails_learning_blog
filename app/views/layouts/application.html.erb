@@ -14,6 +14,11 @@
     <ul>
     <li>
        <%= link_to "home", "/" %> 
+       <% @pages. each do |page| %>
+            <li>
+           <%= link_to page.slug, page %>
+           </li>
+       <% end %>
     </li>
 </footer>
 
