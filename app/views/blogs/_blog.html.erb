@@ -1,9 +1,10 @@
 <h2><%= blog.title %></h2>
 
-<p><%= blog.post %></p>
+<p><%= blog.summary %>
+    <strong><%= link_to 'Read More', blog %></strong>
+</p>
 
 <ul>
-<li> <%= link_to 'Show', blog %>
 <li><%= link_to 'Edit', edit_blog_path(blog) %>
 <li><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 </ul>
