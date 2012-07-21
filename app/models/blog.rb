@@ -1,5 +1,5 @@
 class Blog < ActiveRecord::Base
-  attr_accessible :post, :slug, :title, :post_type, :summary
+  attr_accessible :post, :slug, :title, :post_type, :summary, :published_on
   validates :post, :presence => true
   validates :title, :presence => true
   validates :post_type, :presence => true  
