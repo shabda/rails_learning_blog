@@ -1,0 +1,8 @@
+  <tr>
+    <td><%= blog.post %></td>
+    <td><%= blog.title %></td>
+    <td><%= blog.slug %></td>
+    <td><%= link_to 'Show', blog %></td>
+    <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
+    <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
