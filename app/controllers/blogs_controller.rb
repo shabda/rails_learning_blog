@@ -30,12 +30,10 @@ class BlogsController < ApplicationController
     @blog = Blog.new(params[:blog])
     @blog.post_type = true
     @blog.published_on ||= 0.days.ago
-    respond_to do |format|
-      if @blog.save
-        format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
-      else
-        format.html { render action: "new" }
-      end
+    if @blog.save
+      redirect_to @blog, notice: 'Blog was successfully created.'
+    else
+      render action: "new" 
     end
   end
 
@@ -43,13 +41,10 @@ class BlogsController < ApplicationController
   # PUT /blogs/1.json
   def update
     @blog = Blog.find(params[:id])
-
-    respond_to do |format|
-      if @blog.update_attributes(params[:blog])
-        format.html { redirect_to @blog, notice: 'Blog was successfully updated.' }
-      else
-        format.html { render action: "edit" }
-      end
+    if @blog.update_attributes(params[:blog])
+      redirect_to @blog, notice: 'Blog was successfully updated.'
+    else
+      render action: "edit"
     end
   end
 
@@ -58,9 +53,6 @@ class BlogsController < ApplicationController
   def destroy
     @blog = Blog.find(params[:id])
     @blog.destroy
-
-    respond_to do |format|
-      format.html { redirect_to blogs_url }
-    end
+    redirect_to blogs_url
   end
 end
