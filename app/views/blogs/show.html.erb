@@ -2,20 +2,19 @@
 
 <p id="notice"><%= notice %></p>
 
+<h1><%= @blog.title %></h1>
+
 <p>
-  <b>Post:</b>
   <%= @blog.post %>
+  
+</p>
+<p class="metadata">
+    <strong>Published on <%= @blog.published_on %></strong>
 </p>
 
-<p>
-  <b>Title:</b>
-  <%= @blog.title %>
-</p>
 
-<p>
-  <b>Slug:</b>
-  <%= @blog.slug %>
-</p>
+
+
 
 
 <%= link_to 'Edit', edit_blog_path(@blog) %> |

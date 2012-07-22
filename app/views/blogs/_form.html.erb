@@ -22,6 +22,12 @@
     <%= f.text_area :post %>
   </div>
   
+  <div class="field">
+      <%= f.label :published_on %><br />
+      <%= f.text_field :published_on %>
+      <p>Leave blank to set to current time</p>
+    </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>

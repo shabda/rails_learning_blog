@@ -17,11 +17,11 @@ ActiveRecord::Schema.define(:version => 20120721174508) do
     t.text     "post"
     t.string   "title"
     t.string   "slug"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
     t.boolean  "post_type"
     t.string   "summary"
-    t.date     "pubished_on"
+    t.date     "published_on"
   end
 
 end
