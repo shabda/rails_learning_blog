@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120721174508) do
+ActiveRecord::Schema.define(:version => 20120722042723) do
 
   create_table "blogs", :force => true do |t|
     t.text     "post"
@@ -22,6 +22,13 @@ ActiveRecord::Schema.define(:version => 20120721174508) do
     t.boolean  "post_type"
     t.string   "summary"
     t.date     "published_on"
+  end
+
+  create_table "comments", :force => true do |t|
+    t.text     "text"
+    t.integer  "blog_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end
