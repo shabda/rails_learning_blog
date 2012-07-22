@@ -24,8 +24,7 @@ class BlogsController < ApplicationController
 
   def create
     @blog = Blog.new(params[:blog])
-    @blog.post_type = true
-    @blog.published_on ||= Time.now
+    
     if @blog.save
       redirect_to @blog, notice: 'Blog was successfully created.'
     else

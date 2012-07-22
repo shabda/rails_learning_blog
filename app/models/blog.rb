@@ -11,4 +11,10 @@ class Blog < ActiveRecord::Base
     record.slug ||= record.title.split.join("-")
     record.summary ||= record.post.split[0...10].join(" ")
   end
+  
+  before_validation do |record|
+    record.post_type ||= true
+    record.published_on ||= Time.now
+  end
+  
 end
